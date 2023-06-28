@@ -16,12 +16,14 @@ constructor(private formBuilder: FormBuilder) {}
 
 ngOnInit(): void {
   this.userRegisterForm = this.formBuilder.group({
-    username: ['', [Validators.required, Validators.minLength(6)]],
+    username: ['', [Validators.required, Validators.minLength(3)]],
+    email:['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]],
+    emailRepeat:['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]],
+    numberTelephone: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]],
-    passwordRepeat: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]],
   },
   {
-    validator: compareFields('password', 'passwordRepeat')
+    validator: compareFields('email', 'emailRepeat')
   });
 }
 
@@ -33,8 +35,10 @@ public onSubmit(): void {
 
     const user: UserRegister = {
       username: this.userRegisterForm.value.username,
+      email: this.userRegisterForm.value.email,
+      emailRepeat: this.userRegisterForm.value.emailRepeat,
+      numberTelephone: this.userRegisterForm.value.numberTelephone,
       password: this.userRegisterForm.value.password,
-      password2: this.userRegisterForm.value.passwordRepeat,
     };
     console.log(user);
 
