@@ -1,89 +1,132 @@
-<h1>Formulario de Registro</h1>
+<div class="container-form">
+  <h1 class="register-title">Formulario de Registro</h1>
 
-<form novalidate (ngSubmit)="onSubmit()" [formGroup]="userRegisterForm">
-  <fieldset>
-    <label for="username">Nombre:</label>
-    <input type="text" id="username" formControlName="username" />
-    <div class="error-message" *ngIf="!userRegisterForm.get('username')?.valid &&
-        (userRegisterForm.get('username')?.dirty || submitted)">
-      <p *ngIf="userRegisterForm.get('username')?.errors?.['required']">
-        El nombre es obligatorio
-      </p>
-      <p *ngIf="userRegisterForm.get('username')?.errors?.['minlength']">
-        El nombre debe contener al menos 3 caracteres
-      </p>
-    </div>
-  </fieldset>
+  <form
+    novalidate
+    (ngSubmit)="onSubmit()"
+    [formGroup]="userRegisterForm"
+    class="register-form"
+  >
+    <fieldset>
+      <label for="username">Nombre:</label>
+      <input type="text" id="username" formControlName="username" />
+      <div
+        class="error-message"
+        *ngIf="
+          !userRegisterForm.get('username')?.valid &&
+          (userRegisterForm.get('username')?.dirty || submitted)
+        "
+      >
+        <p *ngIf="userRegisterForm.get('username')?.errors?.['required']">
+          El nombre es obligatorio
+        </p>
+        <p *ngIf="userRegisterForm.get('username')?.errors?.['minlength']">
+          El nombre debe contener al menos 3 caracteres
+        </p>
+      </div>
+    </fieldset>
 
-  <fieldset>
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" formControlName="email" />
-    <div class="error-message" *ngIf="!userRegisterForm.get('email')?.valid &&
-        (userRegisterForm.get('email')?.dirty || submitted)">
-      <p *ngIf="userRegisterForm.get('email')?.errors?.['required']">
-        El email es obligatorio
-      </p>
-      <p *ngIf="userRegisterForm.get('email')?.errors?.['pattern']">
-        El email debe contener, al menos, una minúscula, una mayúscula y un dígito
-      </p>
-    </div>
-  </fieldset>
+    <fieldset>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+      <div
+        class="error-message"
+        *ngIf="
+          !userRegisterForm.get('email')?.valid &&
+          (userRegisterForm.get('email')?.dirty || submitted)
+        "
+      >
+        <p *ngIf="userRegisterForm.get('email')?.errors?.['required']">
+          El email es obligatorio
+        </p>
+        <p *ngIf="userRegisterForm.get('email')?.errors?.['pattern']">
+          El email debe contener, al menos, una minúscula, una mayúscula y un
+          dígito
+        </p>
+      </div>
+    </fieldset>
 
-  <fieldset>
-    <label for="emailRepeat">Confirmación de correo electrónico:</label>
-    <input type="email" id="emailRepeat" formControlName="emailRepeat" />
-    <div class="error-message" *ngIf="!userRegisterForm.get('emailRepeat')?.valid &&
-        (userRegisterForm.get('emailRepeat')?.dirty || submitted)">
-      <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['required']">
-        La confirmación de email es obligatoria
-      </p>
-      <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['pattern']">
-       El email debe contener, al menos, una minúscula, una mayúscula y un dígito
-      </p>
-      <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['mustMatch']">
-        La dirección de correo electrónico no coincide con la anterior
-      </p>
-    </div>
-  </fieldset>
+    <fieldset>
+      <label for="emailRepeat">Confirmación de email:</label>
+      <input type="email" id="emailRepeat" formControlName="emailRepeat" />
+      <div
+        class="error-message"
+        *ngIf="
+          !userRegisterForm.get('emailRepeat')?.valid &&
+          (userRegisterForm.get('emailRepeat')?.dirty || submitted)
+        "
+      >
+        <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['required']">
+          La confirmación de email es obligatoria
+        </p>
+        <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['pattern']">
+          El email debe contener, al menos, una minúscula, una mayúscula y un
+          dígito
+        </p>
+        <p *ngIf="userRegisterForm.get('emailRepeat')?.errors?.['mustMatch']">
+          La dirección de correo electrónico no coincide con la anterior
+        </p>
+      </div>
+    </fieldset>
 
-  <fieldset>
-    <label for="numberTelephone">Teléfono de contacto:</label>
-    <input type="tel" id="numberTelephone" formControlName="numberTelephone" />
-    <div class="error-message" *ngIf="!userRegisterForm.get('numberTelephone')?.valid &&
-        (userRegisterForm.get('numberTelephone')?.dirty || submitted)">
-      <p *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['required']">
-        El teléfono es obligatorio
-      </p>
-      <p *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['minlength']">
-        El teléfono debe contener, como mínimo, 9 dígitos
-      </p>
-      <p *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['maxlength']">
-        El teléfono debe contener, como máximo, 9 dígitos
-      </p>
-    </div>
-  </fieldset>
+    <fieldset>
+      <label for="numberTelephone">Teléfono de contacto:</label>
+      <input
+        type="tel"
+        id="numberTelephone"
+        formControlName="numberTelephone"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          !userRegisterForm.get('numberTelephone')?.valid &&
+          (userRegisterForm.get('numberTelephone')?.dirty || submitted)
+        "
+      >
+        <p
+          *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['required']"
+        >
+          El teléfono es obligatorio
+        </p>
+        <p
+          *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['minlength']"
+        >
+          El teléfono debe contener, como mínimo, 9 dígitos
+        </p>
+        <p
+          *ngIf="userRegisterForm.get('numberTelephone')?.errors?.['maxlength']"
+        >
+          El teléfono debe contener, como máximo, 9 dígitos
+        </p>
+      </div>
+    </fieldset>
 
-  <fieldset>
-    <label for="password">Password:</label>
-    <input type="password" id="password2" formControlName="password" />
-    <div class="error-message" *ngIf="!userRegisterForm.get('password')?.valid &&
-        (userRegisterForm.get('password')?.dirty || submitted)">
-      <p *ngIf="userRegisterForm.get('password')?.errors?.['required']">
-        La contraseña es obligatoria
-      </p>
-      <p *ngIf="userRegisterForm.get('password')?.errors?.['pattern']">
-        La contraseña debe contener una minuscula, una mayuscula, un dígito y al menos 8 caracteres
-      </p>
-    </div>
-  </fieldset>
+    <fieldset>
+      <label for="password">Password:</label>
+      <input type="password" id="password2" formControlName="password" />
+      <div
+        class="error-message"
+        *ngIf="
+          !userRegisterForm.get('password')?.valid &&
+          (userRegisterForm.get('password')?.dirty || submitted)
+        "
+      >
+        <p *ngIf="userRegisterForm.get('password')?.errors?.['required']">
+          La contraseña es obligatoria
+        </p>
+        <p *ngIf="userRegisterForm.get('password')?.errors?.['pattern']">
+          La contraseña debe contener una minuscula, una mayuscula, un dígito y
+          al menos 8 caracteres
+        </p>
+      </div>
+    </fieldset>
 
+    <br />
 
-  <button type="submit">Submit</button>
+    <button type="submit" [ngStyle]="{'color':'rgb(255,102,0)', 'background-color':'rgb(1,77,223)'}">Submit</button>
+  </form>
 
-
-</form>
-
-
-<div>
-  <a [routerLink]="['/home']">Atrás</a>
+  <div>
+    <a [routerLink]="['/home']">Atrás</a>
+  </div>
 </div>

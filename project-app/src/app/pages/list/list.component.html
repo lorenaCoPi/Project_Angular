@@ -1,7 +1,5 @@
-<p>list works!</p>
-
-<div *ngIf="characterList.length">
-  <h3>Digimon</h3>
+<div class="container-list" *ngIf="characterList.length">
+  <h3 class="title-digi">Digimon List</h3>
   <div *ngFor="let character of characterList" class="cards">
     <div class="card">
     <h4>{{ character.id }} - {{ character.name }} </h4>
