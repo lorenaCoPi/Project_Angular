@@ -36,7 +36,7 @@ public onSubmit(): void {
       password: this.userRegisterForm.value.password,
       password2: this.userRegisterForm.value.passwordRepeat,
     };
-    console.log('Enviando user a la API:', user);
+    console.log(user);
 
     this.userRegisterForm.reset();
     this.submitted = false;

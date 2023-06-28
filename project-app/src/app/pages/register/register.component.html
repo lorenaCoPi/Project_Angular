@@ -1,12 +1,9 @@
 <p>register works!</p>
 
-<!-- formGroup es el nombre de nuestro formFroup del .ts -->
 <form novalidate (ngSubmit)="onSubmit()" [formGroup]="userRegisterForm">
-  <!-- Fieldset del primer campo - name -->
   <fieldset>
     <label for="name2">Nombre:</label>
     <input type="text" id="name2" formControlName="username" />
-    <!-- Si el campo name es invalido / ha sido tocado / submitted = true -->
     <div class="error-message" *ngIf="!userRegisterForm.get('username')?.valid &&
         (userRegisterForm.get('username')?.dirty || submitted)">
       <p *ngIf="userRegisterForm.get('username')?.errors?.['required']">
@@ -18,11 +15,9 @@
     </div>
   </fieldset>
 
-  <!-- Fieldset del segundo campo - password -->
   <fieldset>
     <label for="password2">Password:</label>
     <input type="password" id="password2" formControlName="password" />
-    <!-- Si el campo password es invalido / ha sido password / submitted = true -->
     <div class="error-message" *ngIf="!userRegisterForm.get('password')?.valid &&
         (userRegisterForm.get('password')?.dirty || submitted)">
       <p *ngIf="userRegisterForm.get('password')?.errors?.['required']">
@@ -34,11 +29,9 @@
     </div>
   </fieldset>
 
-  <!-- Fieldset del segundo campo - repeatPassword -->
   <fieldset>
     <label for="passwordRepeat2">Repeat password:</label>
     <input type="password" id="passwordRepeat2" formControlName="passwordRepeat" />
-    <!-- Si el campo repeatPassword es invalido / ha sido password / submitted = true -->
     <div class="error-message" *ngIf="!userRegisterForm.get('passwordRepeat')?.valid &&
         (userRegisterForm.get('passwordRepeat')?.dirty || submitted)">
       <p *ngIf="userRegisterForm.get('passwordRepeat')?.errors?.['required']">
@@ -53,7 +46,6 @@
     </div>
   </fieldset>
 
-  <!-- Botón deshabilitado hasta que el formulario sea valid -->
   <button type="submit">Submit</button>
   <p>Disabled: {{ !userRegisterForm.valid }}</p>
 
