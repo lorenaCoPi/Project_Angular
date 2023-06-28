@@ -9,9 +9,9 @@ import { CharacterAngularInterface, CharacterApiResponseInterface } from '../mod
 export class DetailService {
   constructor(private httpClient: HttpClient) {}
 
-  getApiDetail(id: string): Observable</*CharacterAngularInterface[]*/any> {
+  getApiDetail(id: string): Observable<CharacterAngularInterface[]> {
     return this.httpClient
-      .get<CharacterApiResponseInterface>(
+      .get<CharacterAngularInterface[]>(
         `https://www.digi-api.com/api/v1/digimon/${id}`)
     }
   }

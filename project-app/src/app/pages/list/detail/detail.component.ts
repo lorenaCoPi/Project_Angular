@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterAngularInterface } from '../../../models/character.model';
 import { DetailService } from 'src/app/services/detail.service';
@@ -9,7 +9,7 @@ import { DetailService } from 'src/app/services/detail.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent {
+export class DetailComponent implements OnInit {
   characterDetail!: CharacterAngularInterface;
 
   constructor(
