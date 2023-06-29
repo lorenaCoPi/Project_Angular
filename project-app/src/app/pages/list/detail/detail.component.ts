@@ -13,12 +13,12 @@ export class DetailComponent implements OnInit {
   characterDetail!: CharacterAngularInterface;
 
   constructor(
-    private ActivatedRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private DetailService: DetailService
   ) {}
 
   ngOnInit() {
-    this.ActivatedRoute.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       this.getDetail(params['id']);
     });
   }

@@ -12,15 +12,14 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./pages/list/list.module').then(m => m.ListModule),
   },
+  { path: 'list/:id', component: DetailComponent },
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)
   },
   { path: '**',
   loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)},
-  { path: 'list/:id', component: DetailComponent }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

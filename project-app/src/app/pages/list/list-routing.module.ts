@@ -9,7 +9,6 @@ const routes: Routes = [
   children: [
   { path: 'list/:id', component: DetailComponent }]
 },
-
 ];
 
 @NgModule({

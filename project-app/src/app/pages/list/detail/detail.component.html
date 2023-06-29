@@ -1,10 +1,15 @@
-<p>detail works!</p>
+<div class="container-card">
 
-  <h3>Digimon</h3>
+<h3 class="title-digi">Digimon</h3>
 
     <div class="card">
     <h4>{{ characterDetail.id }} - {{ characterDetail.name }} </h4>
-    <img [src]="characterDetail.image" [alt]="characterDetail.name">
+    <img [src]="characterDetail.image" [alt]="characterDetail.name"/>
   </div>
 
+  <div>
+    <a [routerLink]="['/list']">Listado</a>
+  </div>
+
+</div>
 

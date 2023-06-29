@@ -34,11 +34,4 @@ export class ListService {
         })
       );
   }
-
-
- /* getApiDetail(id: number): Observable<CharacterAngularInterface> {
-    return this.httpClient
-      .get<CharacterAngularInterface>(
-        'https://www.digi-api.com/api/v1/digimon/?pageSize=24' + id)
-  }*/
 }
